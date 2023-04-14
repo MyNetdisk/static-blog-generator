@@ -15,11 +15,29 @@ program
   .description("init a blog")
   .action(require("../lib/init"));
 
+// 新键博文命令行
+program
+  .command("new <name>")
+  .description("create a new post")
+  .action(require("../lib/new.js"));
+
+// 新建其他非博文页面命令行
+program
+  .command("page <name>")
+  .description("create a new page")
+  .action(require("../lib/page.js"));
+
 // 清理命令行
 program
   .command("clean")
   .description("clean the blog dir")
   .action(require("../lib/clean.js"));
+
+// 本地服务命令行
+program
+  .command("server [dir]")
+  .description("preview the blog by running a local server")
+  .action(require("../lib/server.js"));
 
 // 添加这句代码上面的代码才会生效
 program.parse(process.argv);
