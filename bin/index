@@ -1,0 +1,25 @@
+#! /usr/bin/env node
+
+const program = require("commander");
+const version = require("../package.json").version;
+
+/**
+ * 定义版本和参数选项
+ * 必须在.parse()之前，因为node的emit()是即时的
+ */
+
+// 初始化命令行
+program
+  .version(version)
+  .command("init [dir]")
+  .description("init a blog")
+  .action(require("../lib/init"));
+
+// 清理命令行
+program
+  .command("clean")
+  .description("clean the blog dir")
+  .action(require("../lib/clean.js"));
+
+// 添加这句代码上面的代码才会生效
+program.parse(process.argv);

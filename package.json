@@ -1,0 +1,44 @@
+{
+  "name": "static-blog-generator",
+  "version": "1.0.0",
+  "description": "Static blog generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MyNetdisk/static-blog-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bin": {
+    "sbg-cli": "./bin/index"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/MyNetdisk/static-blog-generator/issues"
+  },
+  "homepage": "https://github.com/MyNetdisk/static-blog-generator#readme",
+  "dependencies": {
+    "commander": "^10.0.0",
+    "ejs": "^3.1.9",
+    "fs-extra": "^11.1.1",
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
