@@ -27,6 +27,13 @@ program
   .description("create a new page")
   .action(require("../lib/page.js"));
 
+// 将文章渲染为html
+program
+  .command("build [dir]")
+  .description("将文章渲染为html")
+  .option("-o, --output <dir>", "输出目录")
+  .action(require("../lib/build"));
+
 // 清理命令行
 program
   .command("clean")
