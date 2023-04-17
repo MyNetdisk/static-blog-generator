@@ -4,6 +4,7 @@
 const fs = require("fs-extra");
 const path = require("path");
 const ejs = require("ejs");
+const glob = require("glob");
 
 /**
  * 页面类 /page/*
@@ -24,15 +25,40 @@ const ejs = require("ejs");
  */
 
 class Page {
+  /**
+   * 构造函数
+   * @param {*} mdDir .md文件路径
+   * @param {*} pageConfig 页面配置
+   */
   constructor(mdDir, pageConfig) {
+    console.log("mdDir", mdDir);
     if (!mdDir) {
       throw new Error("create new Page need mdDir");
     }
     this.categories = {};
     this.tags = {};
-
     this.mdDir = mdDir;
     this.pageConfig = pageConfig;
+  }
+  /**
+   * 读取markdown文章
+   */
+  _loadMd() {
+    const mdFiles = glob.sync("**/*.md", { cwd: this.mdDir });
+    this.mdList = mdFiles;
+    console.log("===mdFiles===", mdFiles);
+    console.log("===this.mdDir===", this.mdDir);
+  }
+  /**
+   * 加载模板
+   * @param {*} templateConfig 模板配置
+   */
+  loadTemplate(templateConfig) {
+    console.log("templateConfig", templateConfig);
+    return this;
+  }
+  build() {
+    console.log("build");
   }
 }
 

@@ -13,7 +13,7 @@ program
   .version(version)
   .command("init [dir]")
   .description("init a blog")
-  .action(require("../lib/init"));
+  .action(require("../lib/init.js"));
 
 // 新键博文命令行
 program
@@ -32,7 +32,7 @@ program
   .command("build [dir]")
   .description("将文章渲染为html")
   .option("-o, --output <dir>", "输出目录")
-  .action(require("../lib/build"));
+  .action(require("../lib/build.js"));
 
 // 清理命令行
 program
