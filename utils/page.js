@@ -83,9 +83,13 @@ class Page {
     this.mdList.forEach((md) => this._renderCategoryAndTag(md)); //侧边栏统计
     this.postCount = this.mdList.length; //markdown文件总发布数量
     this.sidebarData = this._renderSidebar(); //渲染侧边栏
-    const postLists = this._sliceList(
-      this._renderPostList(sidebarData, this.mdList)
-    );
+    // const postLists = this._sliceList(
+    //   this._renderPostList(sidebarData, this.mdList)
+    // );
+    // const pageCount = postLists.length;
+    return ["hello.md"].map(() => {
+      return ejs.render((this.pageTemplate, {}));
+    });
   }
   /**
    * 加载模板
