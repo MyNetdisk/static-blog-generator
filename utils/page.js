@@ -31,7 +31,6 @@ class Page {
    * @param {*} pageConfig 页面配置
    */
   constructor(mdDir, pageConfig) {
-    console.log("mdDir", mdDir);
     if (!mdDir) {
       throw new Error("create new Page need mdDir");
     }
@@ -45,9 +44,48 @@ class Page {
    */
   _loadMd() {
     const mdFiles = glob.sync("**/*.md", { cwd: this.mdDir });
-    this.mdList = mdFiles;
-    console.log("===mdFiles===", mdFiles);
-    console.log("===this.mdDir===", this.mdDir);
+    this.mdList = mdFiles; //markdown文件 类型：数组
+  }
+  /**
+   * 侧边栏统计
+   * @param {*} md 文件名
+   */
+  _renderCategoryAndTag(md) {
+    console.log("md", md);
+  }
+  /**
+   * 渲染侧边栏
+   */
+  _renderSidebar() {}
+  /**
+   * 分页
+   * @param {*} postList 文章发布列表
+   */
+  _sliceList(postList) {}
+  /**
+   * 渲染文章列表
+   * @param {*} sidebar
+   * @param {*} list
+   */
+  _renderPostList(sidebar, list) {
+    // 按时间排序
+    const sortByTime = (a, b) => {
+      return b.createTime.getTime() - a.createTime.getTime();
+    };
+    return list;
+  }
+  /**
+   * 渲染函数
+   */
+  _render() {
+    console.log("render");
+    this._loadMd(); //加载markdown文件
+    this.mdList.forEach((md) => this._renderCategoryAndTag(md)); //侧边栏统计
+    this.postCount = this.mdList.length; //markdown文件总发布数量
+    this.sidebarData = this._renderSidebar(); //渲染侧边栏
+    const postLists = this._sliceList(
+      this._renderPostList(sidebarData, this.mdList)
+    );
   }
   /**
    * 加载模板
@@ -55,10 +93,39 @@ class Page {
    */
   loadTemplate(templateConfig) {
     console.log("templateConfig", templateConfig);
+    // 主题路径
+    this.templateBaseDir = templateConfig.templateBaseDir;
+    //布局模板路径
+    this.layoutTemplate = path.join(
+      templateConfig.templateBaseDir,
+      templateConfig.layoutTemplate
+    );
+    //发布文章模板路径
+    this.postTemplate = path.join(
+      templateConfig.templateBaseDir,
+      templateConfig.postTemplate
+    );
+    //侧边栏模板路径
+    this.sidebarTemplate = path.join(
+      templateConfig.templateBaseDir,
+      templateConfig.sidebarTemplate
+    );
+    //底部模板路径
+    this.footerTemplate = path.join(
+      templateConfig.templateBaseDir,
+      templateConfig.footerTemplate
+    );
+    //页面模板路径
+    this.pageTemplate = fs.readFileSync(
+      path.join(templateConfig.templateBaseDir, templateConfig.pageTemplate),
+      "utf-8"
+    );
+    console.log("this.pageTemplate", this.pageTemplate);
     return this;
   }
   build() {
-    console.log("build");
+    const pagesHtml = this._render();
+    console.log("pagesHtml", pagesHtml);
   }
 }
 
