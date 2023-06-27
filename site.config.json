@@ -1,0 +1,7 @@
+{
+    "theme": "default",
+    "server": {
+        "port": 3000,
+        "root": ""
+    }
+}

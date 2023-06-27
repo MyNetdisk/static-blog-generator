@@ -3,7 +3,6 @@
  */
 const fs = require("fs-extra");
 const path = require("path");
-const ejs = require("ejs");
 
 /**
  * 创建一篇文章需要

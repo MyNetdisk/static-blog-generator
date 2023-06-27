@@ -3,7 +3,6 @@
  */
 const fs = require("fs-extra");
 const path = require("path");
-const ejs = require("ejs");
 const art = require("art-template");
 const glob = require("glob");
 const { copyFile, writeFile } = require("./writeFile");
