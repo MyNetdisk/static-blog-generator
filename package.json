@@ -30,8 +30,8 @@
   },
   "homepage": "https://github.com/MyNetdisk/static-blog-generator#readme",
   "dependencies": {
+    "art-template": "^4.13.2",
     "commander": "^10.0.0",
-    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "fs-extra": "^11.1.1",
     "glob": "^10.1.0",

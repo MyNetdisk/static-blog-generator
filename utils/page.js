@@ -4,6 +4,7 @@
 const fs = require("fs-extra");
 const path = require("path");
 const ejs = require("ejs");
+const art = require("art-template");
 const glob = require("glob");
 const { copyFile, writeFile } = require("./writeFile");
 
@@ -80,18 +81,23 @@ class Page {
    */
   _render() {
     console.log("render");
-    this._loadMd(); //加载markdown文件
-    this.mdList.forEach((md) => this._renderCategoryAndTag(md)); //侧边栏统计
-    this.postCount = this.mdList.length; //markdown文件总发布数量
-    this.sidebarData = this._renderSidebar(); //渲染侧边栏
+    // this._loadMd(); //加载markdown文件
+    // this.mdList.forEach((md) => this._renderCategoryAndTag(md)); //侧边栏统计
+    // this.postCount = this.mdList.length; //markdown文件总发布数量
+    // this.sidebarData = this._renderSidebar(); //渲染侧边栏
     // const postLists = this._sliceList(
     //   this._renderPostList(sidebarData, this.mdList)
     // );
     // const pageCount = postLists.length;
     return ["hello.md"].map(() => {
-      return ejs.render(this.pageTemplate, {
-        author: "MyNetdisk",
-        title: "静态博客生成器",
+      console.log(this.layoutTemplate, "this.layoutTemplate");
+      console.log(this.footerTemplate, "this.footerTemplate");
+      console.log(this.pageTemplate, "this.pageTemplate");
+      console.log(this.pageConfig.footerConfig, "this.pageConfig.footerConfig");
+      return art.render(this.pageTemplate, {
+        layout: this.layoutTemplate,
+        footer: this.footerTemplate,
+        footerData: this.pageConfig.footerConfig,
       });
     });
   }
@@ -108,17 +114,17 @@ class Page {
       templateConfig.templateBaseDir,
       templateConfig.layoutTemplate
     );
-    //发布文章模板路径
-    this.postTemplate = path.join(
-      templateConfig.templateBaseDir,
-      templateConfig.postTemplate
-    );
-    //侧边栏模板路径
-    this.sidebarTemplate = path.join(
-      templateConfig.templateBaseDir,
-      templateConfig.sidebarTemplate
-    );
-    //底部模板路径
+    // //发布文章模板路径
+    // this.postTemplate = path.join(
+    //   templateConfig.templateBaseDir,
+    //   templateConfig.postTemplate
+    // );
+    // //侧边栏模板路径
+    // this.sidebarTemplate = path.join(
+    //   templateConfig.templateBaseDir,
+    //   templateConfig.sidebarTemplate
+    // );
+    // //底部模板路径
     this.footerTemplate = path.join(
       templateConfig.templateBaseDir,
       templateConfig.footerTemplate

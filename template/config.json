@@ -1,47 +1,80 @@
 {
     "basic": {
-        "title": "My Blog",
-        "author": "MyNetdisk",
-        "description": "爱技术，爱生活",
-        "root": ""
+        "icon": "",
+        "avatar": "https://cdn.jsdelivr.net/gh/Tuzilow/Tuzilow.github.io/images/avatar.png",
+        "title": "Tuzilow的小站",
+        "author": "Tuzilow",
+        "description": "想要成为大佬",
+        "keywords": [
+            "Tuzilow",
+            "鳕鱼堡",
+            "前端",
+            "JavaScript",
+            "TypeScript",
+            "nodejs",
+            "后端",
+            "编程"
+        ]
     },
     "theme": {
-        "themeName": "default",
-        "highlightTheme": "railscasts",
-        "per_page": 6,
-        "filter": [
-            "life",
-            "随笔"
+        "name": "default",
+        "highlight": "github-gist",
+        "pageSize": 7,
+        "exclude": [
+            "life"
         ],
-        "navPages": [
+        "friends": [
             {
-                "title": "标签",
-                "url": "/tags"
-            },
-            {
-                "title": "关于",
-                "url": "/about"
-            },
-            {
-                "title": "生活随笔",
-                "url": "/categories/life/"
+                "name": "BAR团队",
+                "avatar": "http://www.barteam.cn/static/logo.jpg",
+                "desc": "",
+                "url": "http://www.barteam.cn/"
             }
         ],
-        "reward": {
-            "enabled": true,
-            "imgName": "alipay.jpg",
-            "words": "打赏"
+        "about": {
+            "label": "about me.",
+            "url": "/about"
+        },
+        "nav": [
+            {
+                "name": "archives",
+                "label": "归档",
+                "url": "/archives"
+            },
+            {
+                "name": "categories",
+                "label": "分类",
+                "url": "/categories"
+            },
+            {
+                "name": "tags",
+                "label": "标签",
+                "url": "/tags"
+            }
+        ],
+        "links": [
+            {
+                "label": "fa-github-alt",
+                "url": "https://github.com/Tuzilow"
+            },
+            {
+                "label": "fa-qq",
+                "url": "tencent://message/?uin=1176281967"
+            }
+        ],
+        "footer": {
+            "beian": "粤ICP备16057808号",
+            "copyright": {
+                "year": "2019-2021"
+            }
         }
     },
-    "server": {
-        "port": 3000
-    },
-    "gitment": {
-        "owner": "",
+    "deploy": {
+        "username": "Tuzilow",
         "repo": "",
-        "oauth": {
-            "client_id": "",
-            "client_secret": ""
-        }
+        "branch": "main"
+    },
+    "dev_server": {
+        "port": 3000
     }
 }
