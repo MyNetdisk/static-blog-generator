@@ -5,6 +5,7 @@ const fs = require("fs-extra");
 const path = require("path");
 const ejs = require("ejs");
 const glob = require("glob");
+const { copyFile, writeFile } = require("./writeFile");
 
 /**
  * 页面类 /page/*
@@ -88,7 +89,10 @@ class Page {
     // );
     // const pageCount = postLists.length;
     return ["hello.md"].map(() => {
-      return ejs.render((this.pageTemplate, {}));
+      return ejs.render(this.pageTemplate, {
+        author: "MyNetdisk",
+        title: "静态博客生成器",
+      });
     });
   }
   /**
@@ -119,6 +123,10 @@ class Page {
       templateConfig.templateBaseDir,
       templateConfig.footerTemplate
     );
+    console.log(
+      "path.join(templateConfig.templateBaseDir, templateConfig.pageTemplate)",
+      path.join(templateConfig.templateBaseDir, templateConfig.pageTemplate)
+    );
     //页面模板路径
     this.pageTemplate = fs.readFileSync(
       path.join(templateConfig.templateBaseDir, templateConfig.pageTemplate),
@@ -130,6 +138,13 @@ class Page {
   build() {
     const pagesHtml = this._render();
     console.log("pagesHtml", pagesHtml);
+    pagesHtml.forEach((pageHtml, index) => {
+      // 第一页时需要同时渲染index和page/1
+      console.log("this.pageConfig.outputDir", this.pageConfig.outputDir);
+      if (index === 0) {
+        writeFile(path.join(this.pageConfig.outputDir, "index.html"), pageHtml);
+      }
+    });
   }
 }
 
