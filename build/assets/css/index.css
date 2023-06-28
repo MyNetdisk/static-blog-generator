@@ -1,0 +1,38 @@
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Noto Sans TC", sans-serif;
+}
+.container {
+  margin-top: 50px;
+  font-size: 18px;
+}
+#header {
+  text-align: right;
+}
+#header img.avatar {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+}
+#main a {
+  font-weight: 900;
+  color: #000;
+}
+#main .social {
+  text-align: right;
+}
+#main .social a {
+  text-decoration: none;
+}
+#main .social img {
+  width: 25px;
+  height: auto;
+  margin-right: 20px;
+}
+#footer {
+  margin-top: 50px;
+  font-size: 12px;
+}

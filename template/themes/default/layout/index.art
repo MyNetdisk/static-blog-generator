@@ -3,54 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      #app {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        font-family: "Noto Sans TC", sans-serif;
-      }
-      .container {
-        margin-top: 50px;
-        font-size: 18px;
-      }
-      #header {
-        text-align: right;
-      }
-      #header img.avatar {
-        width: 100px;
-        height: auto;
-        border-radius: 50%;
-      }
-      #main a {
-        font-weight: 900;
-        color: #000;
-      }
-      #main .social {
-        text-align: right;
-      }
-      #main .social a {
-        text-decoration: none;
-      }
-      #main .social img {
-        width: 25px;
-        height: auto;
-        margin-right: 20px;
-      }
-      #footer {
-        margin-top: 50px;
-        font-size: 12px;
-      }
-    </style>
+    <title>首页</title>
+    <link rel="stylesheet" href="./assets/css/index.css" />
   </head>
   <body>
     <div id="app">
       <div class="container">
         <header id="header">
           <a href="">
-            <img class="avatar" src="../assets/image/avatar.jpg" alt="" />
+            <img class="avatar" src="./assets/image/avatar.jpg" alt="" />
           </a>
         </header>
         <main id="main">
@@ -70,13 +31,13 @@
           />
           <p class="social">
             <a href="">
-              <img src="../assets/image/github.svg" alt="" />
+              <img src="./assets/image/github.svg" alt="" />
             </a>
             <a href="">
-              <img src="../assets/image/weibo.svg" alt="" />
+              <img src="./assets/image/weibo.svg" alt="" />
             </a>
             <a href="">
-              <img src="../assets/image/zhihu.svg" alt="" />
+              <img src="./assets/image/zhihu.svg" alt="" />
             </a>
           </p>
         </main>

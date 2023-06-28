@@ -1,0 +1,37 @@
+<div class="sidebar">
+  <header>{{title}}</header>
+  <div class="info">
+    <div class="avatar">
+      <img src="{{avatar}}" alt="头像">
+    </div>
+    <div class="author">{{author}}</div>
+    <div class="description">{{description}}</div>
+    <div class="about">
+      <a href="{{about.url}}">{{about.label}}</a>
+    </div>
+  </div>
+  <div class="links">
+    <ul>
+    {{each links}}
+      <li class="links-item">
+        <a href="{{$value.url}}" target="_blank">
+          <i class="fa {{$value.label}}" aria-hidden="true"></i>
+        </a>
+      </li>
+    {{/each}}
+    </ul>
+  </div>
+  <nav>
+    <ul>
+    {{each nav}}
+      <li class="nav-item">
+        <a href="{{$value.url}}">
+          <span class="nav-item__count">{{$value.count || 0}}</span>
+          <span class="nav-item__label">{{$value.label}}</span>
+        </a>
+      </li>
+    {{/each}}
+    </ul>
+  </nav>
+  <div class="catalogue" id="catalogue"></div>
+</div>
