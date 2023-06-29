@@ -1,17 +1,6 @@
 ---
-title: hello World
-date: 2023-04-17,09:45:46
-tags: [blog, helloworld]
-comment: true
-category: welcome
+title: Hello CRN
+date: 2023/06/28 09:50:40
+tags: [blog]
+category: code
 ---
-
-```js
-hello,我是 more
-```
-
-<!--more-->
-
-# Hello
-
-hello
