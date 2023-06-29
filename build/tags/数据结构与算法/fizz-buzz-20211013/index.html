@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Tuzilow">
+    <meta name="description" content="想要成为大佬">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.5.0/styles/github-gist.min.css">
+    <link rel="stylesheet" href="/assets/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+    <script defer src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script defer src="/assets/js/copyCode.js"></script>
+    <script defer src="/assets/js/backTop.js"></script>
+    <script defer src="/assets/js/tool.js"></script>
+
+    
+  <link rel="stylesheet" href="/assets/css/page.css" />
+  <link rel="stylesheet" href="/assets/css/sidebar.css" />
+  <link rel="stylesheet" href="/assets/css/footer.css" />
+  <link rel="stylesheet" href="/assets/css/post.css" />
+  <script defer src="/assets/js/backHome.js"></script>
+  <script defer src="/assets/js/toc.js"></script>
+  <script defer src="/assets/js/copyright.js"></script>
+
+
+    <title>Fizz Buzz</title>
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        
+  <div class="sidebar">
+  <header>Tuzilow的小站</header>
+  <div class="info">
+    <div class="avatar">
+      <img src="https://avatars.githubusercontent.com/u/44645945?v=4" alt="头像">
+    </div>
+    <div class="author">Tuzilow</div>
+    <div class="description">想要成为大佬</div>
+    <div class="about">
+      <a href="/about">about me.</a>
+    </div>
+  </div>
+  <div class="links">
+    <ul>
+    
+      <li class="links-item">
+        <a href="https://github.com/Tuzilow" target="_blank">
+          <i class="fa fa-github-alt" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="links-item">
+        <a href="tencent://message/?uin=1176281967" target="_blank">
+          <i class="fa fa-qq" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+    </ul>
+  </div>
+  <nav>
+    <ul>
+    
+      <li class="nav-item">
+        <a href="/archives">
+          <span class="nav-item__count">28</span>
+          <span class="nav-item__label">归档</span>
+        </a>
+      </li>
+    
+      <li class="nav-item">
+        <a href="/categories">
+          <span class="nav-item__count">2</span>
+          <span class="nav-item__label">分类</span>
+        </a>
+      </li>
+    
+      <li class="nav-item">
+        <a href="/tags">
+          <span class="nav-item__count">2</span>
+          <span class="nav-item__label">标签</span>
+        </a>
+      </li>
+    
+    </ul>
+  </nav>
+  <div class="catalogue" id="catalogue"></div>
+</div>
+
+      </aside>
+      <main>
+        
+  <div class="post">
+    <div class="post-front">
+      <h1 class="post-front__title">Fizz Buzz</h1>
+      <div class="post-front__desc">
+        
+        <p class="post-front__desc-date">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          2023/06/28 09:50:40
+        </p>
+        
+        
+        <p class="post-front__desc-category">
+          <i class="fa fa-folder-o" aria-hidden="true"></i>
+          <a href="/categories/LeetCode">
+            LeetCode
+          </a>
+        </p>
+        
+          <div class="post-front__desc-tags">
+          
+          <a href="/tags/数据结构与算法">
+            <i class="fa fa-tag" aria-hidden="true"></i>
+            数据结构与算法
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    <div class="post-content">
+      <nav id="toc" class="toc"><ol><li><a href="#412-fizz-buzz">412. Fizz Buzz</a></li><li><a href="#解题思路">解题思路</a></li></ol></nav><blockquote>
+<p>给你一个整数 n ，找出从 1 到 n 各个整数的 Fizz Buzz 表示，并用字符串数组 answer（下标从 1 开始）返回结果，其中：</p>
+<p>answer[i] == &quot;FizzBuzz&quot; 如果 i 同时是 3 和 5 的倍数。</p>
+<p>answer[i] == &quot;Fizz&quot; 如果 i 是 3 的倍数。</p>
+<p>answer[i] == &quot;Buzz&quot; 如果 i 是 5 的倍数。</p>
+<p>answer[i] == i 如果上述条件全不满足。</p>
+</blockquote>
+<h1 id="412-fizz-buzz">412. Fizz Buzz</h1>
+<p>给你一个整数 n ，找出从 1 到 n 各个整数的 Fizz Buzz 表示，并用字符串数组 answer（下标从 1 开始）返回结果，其中：</p>
+<p>answer[i] == &quot;FizzBuzz&quot; 如果 i 同时是 3 和 5 的倍数。
+answer[i] == &quot;Fizz&quot; 如果 i 是 3 的倍数。
+answer[i] == &quot;Buzz&quot; 如果 i 是 5 的倍数。
+answer[i] == i 如果上述条件全不满足。</p>
+<p>示例 1：</p>
+<p>输入：n = 3
+输出：[&quot;1&quot;,&quot;2&quot;,&quot;Fizz&quot;]
+示例 2：</p>
+<p>输入：n = 5
+输出：[&quot;1&quot;,&quot;2&quot;,&quot;Fizz&quot;,&quot;4&quot;,&quot;Buzz&quot;]
+示例 3：</p>
+<p>输入：n = 15
+输出：[&quot;1&quot;,&quot;2&quot;,&quot;Fizz&quot;,&quot;4&quot;,&quot;Buzz&quot;,&quot;Fizz&quot;,&quot;7&quot;,&quot;8&quot;,&quot;Fizz&quot;,&quot;Buzz&quot;,&quot;11&quot;,&quot;Fizz&quot;,&quot;13&quot;,&quot;14&quot;,&quot;FizzBuzz&quot;]</p>
+<p>提示：</p>
+<p>1 &lt;= n &lt;= 104</p>
+<p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/fizz-buzz
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+<h1 id="解题思路">解题思路</h1>
+<p>代码</p>
+<pre class="hljs"><code><button class="copy-btn" type="button" data-clipboard-action="copy" data-clipboard-target="#copy1688035059814">复制</button><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fizzBuzz</span>(<span class="hljs-params">n: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">string</span>[] </span>{
+  <span class="hljs-keyword">let</span> answer: <span class="hljs-built_in">string</span>[] = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) {
+    <span class="hljs-keyword">if</span> (i % <span class="hljs-number">3</span> === <span class="hljs-number">0</span> &amp;&amp; i % <span class="hljs-number">5</span> === <span class="hljs-number">0</span>) {
+      answer[i - <span class="hljs-number">1</span>] = <span class="hljs-string">&quot;FizzBuzz&quot;</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (i % <span class="hljs-number">3</span> === <span class="hljs-number">0</span>) {
+      answer[i - <span class="hljs-number">1</span>] = <span class="hljs-string">&quot;Fizz&quot;</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (i % <span class="hljs-number">5</span> === <span class="hljs-number">0</span>) {
+      answer[i - <span class="hljs-number">1</span>] = <span class="hljs-string">&quot;Buzz&quot;</span>;
+    } <span class="hljs-keyword">else</span> {
+      answer[i - <span class="hljs-number">1</span>] = <span class="hljs-string">`<span class="hljs-subst">${i}</span>`</span>;
+    }
+  }
+  <span class="hljs-keyword">return</span> answer;
+}
+<b class="name">ts</b></code><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre><textarea style="position: absolute;top: -9999px;left: -9999px;z-index: -9999;" id="copy1688035059814">function fizzBuzz(n: number): string[] {
+  let answer: string[] = [];
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      answer[i - 1] = "FizzBuzz";
+    } else if (i % 3 === 0) {
+      answer[i - 1] = "Fizz";
+    } else if (i % 5 === 0) {
+      answer[i - 1] = "Buzz";
+    } else {
+      answer[i - 1] = `${i}`;
+    }
+  }
+  return answer;
+}
+</textarea>
+
+    </div>
+    
+  </div>
+
+        <footer>
+        
+  <div class="footer">
+  
+  <div class="theme">
+    博客主题为 <a href="https://github.com/Tuzilow/CoinRailgun">CoinRailgun</a> 默认主题
+  </div>
+  <div class="copyright">
+    <span>© 2019-2021 Tuzilow.</span>
+    <span>Powered by <a href="https://github.com/Tuzilow/CoinRailgun">CoinRailgun</a></span>
+  </div>
+</div>
+
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

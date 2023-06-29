@@ -1,8 +1,7 @@
 ---
 title: 对称二叉树
-date: 2021-11-11
-categories:
-  - LeetCode
+date: 2023/06/28 09:50:40
+category: LeetCode
 tags:
   - 数据结构与算法
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
@@ -16,8 +15,6 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 
 给定一个二叉树，检查它是否是镜像对称的。
 
-
-
 例如，二叉树  [1,2,2,3,4,4,3] 是对称的。
 
     1
@@ -27,8 +24,6 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 / \ / \
 3 4 4 3
 
-
-
 但是下面这个  [1,2,2,null,3,null,3] 则不是镜像对称的:
 
     1
@@ -37,8 +32,6 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
  2 2
 \ \
  3 3
-
-
 
 进阶：
 

@@ -1,8 +1,7 @@
 ---
 title: 二叉树的最大深度
-date: 2021-11-12
-categories:
-  - LeetCode
+date: 2023/06/28 09:50:40
+category: LeetCode
 tags:
   - 数据结构与算法
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png

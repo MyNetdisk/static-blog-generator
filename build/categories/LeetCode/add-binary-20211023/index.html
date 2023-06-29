@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Tuzilow">
+    <meta name="description" content="想要成为大佬">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.5.0/styles/github-gist.min.css">
+    <link rel="stylesheet" href="/assets/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+    <script defer src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script defer src="/assets/js/copyCode.js"></script>
+    <script defer src="/assets/js/backTop.js"></script>
+    <script defer src="/assets/js/tool.js"></script>
+
+    
+  <link rel="stylesheet" href="/assets/css/page.css" />
+  <link rel="stylesheet" href="/assets/css/sidebar.css" />
+  <link rel="stylesheet" href="/assets/css/footer.css" />
+  <link rel="stylesheet" href="/assets/css/post.css" />
+  <script defer src="/assets/js/backHome.js"></script>
+  <script defer src="/assets/js/toc.js"></script>
+  <script defer src="/assets/js/copyright.js"></script>
+
+
+    <title>二进制求和</title>
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        
+  <div class="sidebar">
+  <header>Tuzilow的小站</header>
+  <div class="info">
+    <div class="avatar">
+      <img src="https://avatars.githubusercontent.com/u/44645945?v=4" alt="头像">
+    </div>
+    <div class="author">Tuzilow</div>
+    <div class="description">想要成为大佬</div>
+    <div class="about">
+      <a href="/about">about me.</a>
+    </div>
+  </div>
+  <div class="links">
+    <ul>
+    
+      <li class="links-item">
+        <a href="https://github.com/Tuzilow" target="_blank">
+          <i class="fa fa-github-alt" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="links-item">
+        <a href="tencent://message/?uin=1176281967" target="_blank">
+          <i class="fa fa-qq" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+    </ul>
+  </div>
+  <nav>
+    <ul>
+    
+      <li class="nav-item">
+        <a href="/archives">
+          <span class="nav-item__count">28</span>
+          <span class="nav-item__label">归档</span>
+        </a>
+      </li>
+    
+      <li class="nav-item">
+        <a href="/categories">
+          <span class="nav-item__count">2</span>
+          <span class="nav-item__label">分类</span>
+        </a>
+      </li>
+    
+      <li class="nav-item">
+        <a href="/tags">
+          <span class="nav-item__count">2</span>
+          <span class="nav-item__label">标签</span>
+        </a>
+      </li>
+    
+    </ul>
+  </nav>
+  <div class="catalogue" id="catalogue"></div>
+</div>
+
+      </aside>
+      <main>
+        
+  <div class="post">
+    <div class="post-front">
+      <h1 class="post-front__title">二进制求和</h1>
+      <div class="post-front__desc">
+        
+        <p class="post-front__desc-date">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          2023/06/28 09:50:40
+        </p>
+        
+        
+        <p class="post-front__desc-category">
+          <i class="fa fa-folder-o" aria-hidden="true"></i>
+          <a href="/categories/LeetCode">
+            LeetCode
+          </a>
+        </p>
+        
+          <div class="post-front__desc-tags">
+          
+          <a href="/tags/数据结构与算法">
+            <i class="fa fa-tag" aria-hidden="true"></i>
+            数据结构与算法
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    <div class="post-content">
+      <nav id="toc" class="toc"><ol><li><a href="#67-二进制求和">67. 二进制求和</a></li><li><a href="#代码">代码</a></li></ol></nav><blockquote>
+<p>tip:
+给你两个二进制字符串，返回它们的和（用二进制表示）。</p>
+<p>输入为 非空 字符串且只包含数字  1  和  0。</p>
+</blockquote>
+<h1 id="67-二进制求和">67. 二进制求和</h1>
+<p>给你两个二进制字符串，返回它们的和（用二进制表示）。</p>
+<p>输入为 非空 字符串且只包含数字  1  和  0。</p>
+<p>示例  1:</p>
+<p>输入: a = &quot;11&quot;, b = &quot;1&quot;
+输出: &quot;100&quot;</p>
+<p>示例  2:</p>
+<p>输入: a = &quot;1010&quot;, b = &quot;1011&quot;
+输出: &quot;10101&quot;</p>
+<p>提示：</p>
+<p>每个字符串仅由字符 '0' 或 '1' 组成。
+1 &lt;= a.length, b.length &lt;= 10^4
+字符串如果不是 &quot;0&quot; ，就都不含前导零。</p>
+<p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/add-binary
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+<h1 id="代码">代码</h1>
+<pre class="hljs"><code><button class="copy-btn" type="button" data-clipboard-action="copy" data-clipboard-target="#copy1688036588564">复制</button><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addBinary</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">let</span> carry = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">let</span> arr = [];
+  <span class="hljs-keyword">let</span> maxLength = <span class="hljs-built_in">Math</span>.max(a.length, b.length);
+  <span class="hljs-keyword">let</span> aMaxIndex = a.length - <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">let</span> bMaxIndex = b.length - <span class="hljs-number">1</span>;
+
+  <span class="hljs-keyword">while</span> (i &lt; maxLength) {
+    <span class="hljs-keyword">let</span> ac = <span class="hljs-built_in">Number</span>(a[aMaxIndex - i]) || <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">let</span> bc = <span class="hljs-built_in">Number</span>(b[bMaxIndex - i]) || <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">let</span> newValue = ac + bc + carry;
+    carry = newValue &gt; <span class="hljs-number">1</span> ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;
+    arr.push(newValue % <span class="hljs-number">2</span>);
+    i++;
+  }
+
+  carry &amp;&amp; arr.push(<span class="hljs-number">1</span>);
+
+  <span class="hljs-keyword">return</span> arr.reverse().join(<span class="hljs-string">&quot;&quot;</span>);
+}
+<b class="name">ts</b></code><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre><textarea style="position: absolute;top: -9999px;left: -9999px;z-index: -9999;" id="copy1688036588564">function addBinary(a, b) {
+  let carry = 0;
+  let i = 0;
+  let arr = [];
+  let maxLength = Math.max(a.length, b.length);
+  let aMaxIndex = a.length - 1;
+  let bMaxIndex = b.length - 1;
+
+  while (i < maxLength) {
+    let ac = Number(a[aMaxIndex - i]) || 0;
+    let bc = Number(b[bMaxIndex - i]) || 0;
+
+    let newValue = ac + bc + carry;
+    carry = newValue > 1 ? 1 : 0;
+    arr.push(newValue % 2);
+    i++;
+  }
+
+  carry && arr.push(1);
+
+  return arr.reverse().join("");
+}
+</textarea>
+<p>作者：jin-ming-ji
+链接：https://leetcode-cn.com/problems/add-binary/solution/ts-100beatjie-fa-by-jin-ming-ji-ztie/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+    </div>
+    
+  </div>
+
+        <footer>
+        
+  <div class="footer">
+  
+  <div class="theme">
+    博客主题为 <a href="https://github.com/Tuzilow/CoinRailgun">CoinRailgun</a> 默认主题
+  </div>
+  <div class="copyright">
+    <span>© 2019-2021 Tuzilow.</span>
+    <span>Powered by <a href="https://github.com/Tuzilow/CoinRailgun">CoinRailgun</a></span>
+  </div>
+</div>
+
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,8 +1,7 @@
 ---
 title: 有效的括号
-date: 2021-05-13
-categories:
-  - LeetCode
+date: 2023/06/28 09:50:40
+category: LeetCode
 tags:
   - 数据结构与算法
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
@@ -20,8 +19,6 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 
 左括号必须用相同类型的右括号闭合。
 左括号必须以正确的顺序闭合。
-
-
 
 示例 1：
 

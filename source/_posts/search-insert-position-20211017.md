@@ -1,8 +1,7 @@
 ---
 title: 搜索插入位置
-date: 2021-10-17
-categories:
-  - LeetCode
+date: 2023/06/28 09:50:40
+category: LeetCode
 tags:
   - 数据结构与算法
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png

@@ -1,8 +1,7 @@
 ---
 title: 二叉树的坡度
-date: 2021-11-18
-categories:
-  - LeetCode
+date: 2023/06/28 09:50:40
+category: LeetCode
 tags:
   - 数据结构与算法
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
@@ -47,8 +46,6 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 
 输入：root = [21,7,14,1,1,2,2,3,3]
 输出：9
-
-
 
 提示：
 

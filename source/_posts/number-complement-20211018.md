@@ -1,8 +1,7 @@
 ---
 title: 数字的补数
-date: 2021-10-18
-categories:
-  - LeetCode
+date: 2023/06/28 09:50:40
+category: LeetCode
 tags:
   - 数据结构与算法
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
@@ -29,8 +28,6 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 输入：num = 1
 输出：0
 解释：1 的二进制表示为 1（没有前导零位），其补数为 0。所以你需要输出 0 。
-
-
 
 提示：
 

@@ -1,0 +1,42 @@
+.sidebar {
+  width: 240px;
+  margin-right: 20px;
+  background-color: var(--white-light-1);
+}
+
+.sidebar header {
+  padding: 20px 0;
+  color: #fff;
+  background: var(--primary);
+  text-align: center;
+}
+
+.sidebar .info .avatar {
+  padding: 20px 0 10px;
+}
+
+.sidebar .info .avatar img {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.sidebar .info .avatar,
+.sidebar .info .author,
+.sidebar .info .description,
+.sidebar .info .about {
+  text-align: center;
+}
+
+.sidebar .links ul,
+.sidebar nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar nav ul li.nav-item:not() .sidebar nav ul li.nav-item a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

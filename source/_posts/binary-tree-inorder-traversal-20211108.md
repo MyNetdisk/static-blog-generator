@@ -1,19 +1,19 @@
 ---
 title: 二叉树的中序遍历
-date: 2021-11-08
-categories: 
-  - LeetCode
+date: 2023/06/28 09:50:40
+category: LeetCode
 tags:
   - 数据结构与算法
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 ---
 
->给定一个二叉树的根节点 root ，返回它的 中序 遍历。
+> 给定一个二叉树的根节点 root ，返回它的 中序   遍历。
 
 <!-- more -->
 
 # 94. 二叉树的中序遍历
-给定一个二叉树的根节点 root ，返回它的 中序 遍历。
+
+给定一个二叉树的根节点 root ，返回它的 中序   遍历。
 
 示例 1：
 
@@ -39,27 +39,24 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 
 输入：root = [1,null,2]
 输出：[1,2]
- 
 
 提示：
 
 树中节点数目在范围 [0, 100] 内
 -100 <= Node.val <= 100
- 
 
-进阶: 递归算法很简单，你可以通过迭代算法完成吗？
+进阶:  递归算法很简单，你可以通过迭代算法完成吗？
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/binary-tree-inorder-traversal
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-
 
 方法一：递归
 思路与算法
 
 首先我们需要了解什么是二叉树的中序遍历：按照访问左子树——根节点——右子树的方式遍历这棵树，而在访问左子树或者右子树的时候我们按照同样的方式遍历，直到遍历完整棵树。因此整个遍历过程天然具有递归的性质，我们可以直接用递归函数来模拟这一过程。
 
-定义 inorder(root) 表示当前遍历到 \textit{root}root 节点的答案，那么按照定义，我们只要递归调用 inorder(root.left) 来遍历 \textit{root}root 节点的左子树，然后将 \textit{root}root 节点的值加入答案，再递归调用inorder(root.right) 来遍历 \textit{root}root 节点的右子树即可，递归终止的条件为碰到空节点。
+定义 inorder(root) 表示当前遍历到 \textit{root}root 节点的答案，那么按照定义，我们只要递归调用 inorder(root.left) 来遍历 \textit{root}root 节点的左子树，然后将 \textit{root}root 节点的值加入答案，再递归调用 inorder(root.right) 来遍历 \textit{root}root 节点的右子树即可，递归终止的条件为碰到空节点。
 
 复杂度分析
 时间复杂度：O(n)O(n)，其中 nn 为二叉树节点的个数。二叉树的遍历中每个节点会被访问一次且只会被访问一次。
@@ -71,6 +68,7 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 # 代码
+
 ```ts
 /**
  * Definition for a binary tree node.
@@ -88,15 +86,15 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 
 function inorderTraversal(root: TreeNode | null): number[] {
   const res = [];
-  const inorder =(root)=>{
-      if(!root){
-          return;
-      }
-      inorder(root.left)
-      res.push(root.val)
-      inorder(root.right)
-  }
-  inorder(root)
+  const inorder = (root) => {
+    if (!root) {
+      return;
+    }
+    inorder(root.left);
+    res.push(root.val);
+    inorder(root.right);
+  };
+  inorder(root);
   return res;
-};
+}
 ```

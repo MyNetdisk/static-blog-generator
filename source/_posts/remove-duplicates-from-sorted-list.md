@@ -1,8 +1,7 @@
 ---
 title: 删除排序链表中的重复元素
-date: 2021-11-02
-categories:
-  - LeetCode
+date: 2023/06/28 09:50:40
+category: LeetCode
 tags:
   - 数据结构与算法
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png

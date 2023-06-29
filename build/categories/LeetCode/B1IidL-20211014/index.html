@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Tuzilow">
+    <meta name="description" content="想要成为大佬">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.5.0/styles/github-gist.min.css">
+    <link rel="stylesheet" href="/assets/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+    <script defer src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script defer src="/assets/js/copyCode.js"></script>
+    <script defer src="/assets/js/backTop.js"></script>
+    <script defer src="/assets/js/tool.js"></script>
+
+    
+  <link rel="stylesheet" href="/assets/css/page.css" />
+  <link rel="stylesheet" href="/assets/css/sidebar.css" />
+  <link rel="stylesheet" href="/assets/css/footer.css" />
+  <link rel="stylesheet" href="/assets/css/post.css" />
+  <script defer src="/assets/js/backHome.js"></script>
+  <script defer src="/assets/js/toc.js"></script>
+  <script defer src="/assets/js/copyright.js"></script>
+
+
+    <title>山峰数组的顶部</title>
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        
+  <div class="sidebar">
+  <header>Tuzilow的小站</header>
+  <div class="info">
+    <div class="avatar">
+      <img src="https://avatars.githubusercontent.com/u/44645945?v=4" alt="头像">
+    </div>
+    <div class="author">Tuzilow</div>
+    <div class="description">想要成为大佬</div>
+    <div class="about">
+      <a href="/about">about me.</a>
+    </div>
+  </div>
+  <div class="links">
+    <ul>
+    
+      <li class="links-item">
+        <a href="https://github.com/Tuzilow" target="_blank">
+          <i class="fa fa-github-alt" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="links-item">
+        <a href="tencent://message/?uin=1176281967" target="_blank">
+          <i class="fa fa-qq" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+    </ul>
+  </div>
+  <nav>
+    <ul>
+    
+      <li class="nav-item">
+        <a href="/archives">
+          <span class="nav-item__count">28</span>
+          <span class="nav-item__label">归档</span>
+        </a>
+      </li>
+    
+      <li class="nav-item">
+        <a href="/categories">
+          <span class="nav-item__count">2</span>
+          <span class="nav-item__label">分类</span>
+        </a>
+      </li>
+    
+      <li class="nav-item">
+        <a href="/tags">
+          <span class="nav-item__count">2</span>
+          <span class="nav-item__label">标签</span>
+        </a>
+      </li>
+    
+    </ul>
+  </nav>
+  <div class="catalogue" id="catalogue"></div>
+</div>
+
+      </aside>
+      <main>
+        
+  <div class="post">
+    <div class="post-front">
+      <h1 class="post-front__title">山峰数组的顶部</h1>
+      <div class="post-front__desc">
+        
+        <p class="post-front__desc-date">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          2023/06/28 09:50:40
+        </p>
+        
+        
+        <p class="post-front__desc-category">
+          <i class="fa fa-folder-o" aria-hidden="true"></i>
+          <a href="/categories/LeetCode">
+            LeetCode
+          </a>
+        </p>
+        
+          <div class="post-front__desc-tags">
+          
+          <a href="/tags/数据结构与算法">
+            <i class="fa fa-tag" aria-hidden="true"></i>
+            数据结构与算法
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    <div class="post-content">
+      <nav id="toc" class="toc"><ol><li><a href="#山峰数组的顶部">山峰数组的顶部</a></li><li><a href="#解题思路">解题思路</a></li></ol></nav><blockquote>
+<p>山峰数组的顶部</p>
+</blockquote>
+<h1 id="山峰数组的顶部">山峰数组的顶部</h1>
+<p>符合下列属性的数组 arr 称为 山峰数组（山脉数组） ：</p>
+<p>arr.length &gt;= 3
+存在 i（0 &lt; i &lt; arr.length - 1）使得：
+arr[0] &lt; arr[1] &lt; ... arr[i-1] &lt; arr[i]
+arr[i] &gt; arr[i+1] &gt; ... &gt; arr[arr.length - 1]
+给定由整数组成的山峰数组 arr ，返回任何满足 arr[0] &lt; arr[1] &lt; ... arr[i - 1] &lt; arr[i] &gt; arr[i + 1] &gt; ... &gt; arr[arr.length - 1] 的下标 i ，即山峰顶部。</p>
+<p>示例 1：</p>
+<p>输入：arr = [0,1,0]
+输出：1
+示例 2：</p>
+<p>输入：arr = [1,3,5,4,2]
+输出：2
+示例 3：</p>
+<p>输入：arr = [0,10,5,2]
+输出：1
+示例 4：</p>
+<p>输入：arr = [3,4,5,1]
+输出：2
+示例 5：</p>
+<p>输入：arr = [24,69,100,99,79,78,67,36,26,19]
+输出：2</p>
+<p>提示：</p>
+<p>3 &lt;= arr.length &lt;= 104
+0 &lt;= arr[i] &lt;= 106
+题目数据保证 arr 是一个山脉数组</p>
+<p>进阶：很容易想到时间复杂度 O(n) 的解决方案，你可以设计一个 O(log(n)) 的解决方案吗？</p>
+<p>注意：本题与主站 852  题相同：https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/</p>
+<p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/B1IidL
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+<h1 id="解题思路">解题思路</h1>
+<p>题目已经保证 arr 是一个山脉数组了，结果肯定是在 [1, arr.length - 2] 之间。</p>
+<p>可以用二分法，找一个中间的数 arr[mid]，判断它和 arr[mid - 1]， arr[mid + 1] 的关系来决定应该选择左边，还是选择右边。</p>
+<p>代码</p>
+<pre class="hljs"><code><button class="copy-btn" type="button" data-clipboard-action="copy" data-clipboard-target="#copy1688036684581">复制</button><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@param <span class="hljs-type">{number[]}</span> <span class="hljs-variable">arr</span></span>
+ * <span class="hljs-doctag">@return <span class="hljs-type">{number}</span></span>
+ */</span>
+<span class="hljs-keyword">var</span> peakIndexInMountainArray = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">arr</span>) </span>{
+  <span class="hljs-keyword">let</span> lo = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">let</span> hi = arr.length - <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">while</span> (lo &lt; hi) {
+    <span class="hljs-keyword">const</span> mid = lo + ((hi - lo) &gt;&gt; <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">if</span> (arr[mid - <span class="hljs-number">1</span>] &lt; arr[mid] &amp;&amp; arr[mid] &gt; arr[mid + <span class="hljs-number">1</span>]) {
+      <span class="hljs-keyword">return</span> mid;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (arr[mid - <span class="hljs-number">1</span>] &lt; arr[mid]) {
+      lo = mid + <span class="hljs-number">1</span>;
+    } <span class="hljs-keyword">else</span> {
+      hi = mid - <span class="hljs-number">1</span>;
+    }
+  }
+  <span class="hljs-keyword">return</span> lo;
+};
+<b class="name">ts</b></code><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre><textarea style="position: absolute;top: -9999px;left: -9999px;z-index: -9999;" id="copy1688036684581">/**
+ * @param {number[]} arr
+ * @return {number}
+ */
+var peakIndexInMountainArray = function (arr) {
+  let lo = 1;
+  let hi = arr.length - 2;
+  while (lo < hi) {
+    const mid = lo + ((hi - lo) >> 1);
+    if (arr[mid - 1] < arr[mid] && arr[mid] > arr[mid + 1]) {
+      return mid;
+    } else if (arr[mid - 1] < arr[mid]) {
+      lo = mid + 1;
+    } else {
+      hi = mid - 1;
+    }
+  }
+  return lo;
+};
+</textarea>
+<p>作者：scnu_evan
+链接：https://leetcode-cn.com/problems/B1IidL/solution/ologn-javascript-jian-zhi-offer-ii-069-s-66rl/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+    </div>
+    
+  </div>
+
+        <footer>
+        
+  <div class="footer">
+  
+  <div class="theme">
+    博客主题为 <a href="https://github.com/Tuzilow/CoinRailgun">CoinRailgun</a> 默认主题
+  </div>
+  <div class="copyright">
+    <span>© 2019-2021 Tuzilow.</span>
+    <span>Powered by <a href="https://github.com/Tuzilow/CoinRailgun">CoinRailgun</a></span>
+  </div>
+</div>
+
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
