@@ -46,5 +46,11 @@ program
   .description("preview the blog by running a local server")
   .action(require("../lib/server.js"));
 
+program
+  .command("deploy")
+  .description("部署静态页")
+  .option("-d, --dir <dir>", "build时输出的目录")
+  .action(require("../lib/deploy.js"));
+
 // 添加这句代码上面的代码才会生效
 program.parse(process.argv);

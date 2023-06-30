@@ -7,6 +7,7 @@
     "build": "sbg-cli build",
     "clean": "sbg-cli clean",
     "server": "sbg-cli server",
+    "deploy": "sbg-cli deploy",
     "commit": "cz",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
