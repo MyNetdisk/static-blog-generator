@@ -45,6 +45,7 @@
     "uslug": "^1.0.4"
   },
   "devDependencies": {
+    "chalk": "^2.4.2",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.3"
