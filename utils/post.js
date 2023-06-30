@@ -131,6 +131,9 @@ class Post {
       .replace("<!--more-->", "")
       .replace("<!-- more -->", "");
     this.contentHtml = md.render("${toc}" + noMore);
+    if (this.front.name === "about.md") {
+      // console.log("this.contentHtml", this.contentHtml);
+    }
   }
   /**
    * 根据模板生成html文件（私有方法）

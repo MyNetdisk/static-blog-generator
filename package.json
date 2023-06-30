@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "sbg-cli build",
-    "server": "sbg-cli server",
     "clean": "sbg-cli clean",
+    "server": "sbg-cli server",
     "commit": "cz",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
