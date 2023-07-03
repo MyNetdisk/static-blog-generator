@@ -3,7 +3,7 @@
     "deploy": {
         "username": "MyNetdisk",
         "repo": "",
-        "branch": "main"
+        "branch": "master"
     },
     "server": {
         "port": 3000,
