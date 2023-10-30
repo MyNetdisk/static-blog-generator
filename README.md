@@ -1,6 +1,6 @@
 <div align="left">
 
-[简体中文](https://github.com/MyNetdisk/ToolKit/blob/main/README.zh-CN.md) | English
+[简体中文](https://github.com/MyNetdisk/static-blog-generator/blob/main/README.zh-CN.md) | English
 
 </div>
 
